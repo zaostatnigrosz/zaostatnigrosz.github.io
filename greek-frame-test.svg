@@ -1,0 +1,91 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180">
+  <defs>
+    <style>
+      .greek-line {
+        fill: none;
+        stroke: #16325c;
+        stroke-width: 6;
+        stroke-linecap: square;
+        stroke-linejoin: miter;
+      }
+      .greek-fill {
+        fill: #16325c;
+      }
+    </style>
+  </defs>
+
+  <!-- BACKGROUND WHITE OR TRANSPARENT -->
+  <rect width="180" height="180" fill="#ffffff" />
+  <rect x="60" y="60" width="60" height="60" fill="none" />
+
+  <!-- ================= TOP EDGE (60 to 120, y: 0 to 60) ================= -->
+  <!-- Outer line -->
+  <line x1="60" y1="8" x2="120" y2="8" class="greek-line" />
+  <!-- Inner line -->
+  <line x1="60" y1="52" x2="120" y2="52" class="greek-line" />
+  <!-- Meander Fret (width 60) -->
+  <path d="M 60,42 L 80,42 L 80,18 L 105,18 L 105,32 L 92,32 L 92,25" class="greek-line" />
+  <path d="M 120,42 L 105,42" class="greek-line" />
+  <path d="M 60,18 L 70,18" class="greek-line" />
+
+  <!-- ================= BOTTOM EDGE (60 to 120, y: 120 to 180) ================= -->
+  <!-- Outer line -->
+  <line x1="60" y1="172" x2="120" y2="172" class="greek-line" />
+  <!-- Inner line -->
+  <line x1="60" y1="128" x2="120" y2="128" class="greek-line" />
+  <path d="M 60,138 L 80,138 L 80,162 L 105,162 L 105,148 L 92,148 L 92,155" class="greek-line" />
+  <path d="M 120,138 L 105,138" class="greek-line" />
+  <path d="M 60,162 L 70,162" class="greek-line" />
+
+  <!-- ================= LEFT EDGE (x: 0 to 60, y: 60 to 120) ================= -->
+  <!-- Outer line -->
+  <line x1="8" y1="60" x2="8" y2="120" class="greek-line" />
+  <!-- Inner line -->
+  <line x1="52" y1="60" x2="52" y2="120" class="greek-line" />
+  <path d="M 42,60 L 42,80 L 18,80 L 18,105 L 32,105 L 32,92 L 25,92" class="greek-line" />
+  <path d="M 42,120 L 42,105" class="greek-line" />
+  <path d="M 18,60 L 18,70" class="greek-line" />
+
+  <!-- ================= RIGHT EDGE (x: 120 to 180, y: 60 to 120) ================= -->
+  <!-- Outer line -->
+  <line x1="172" y1="60" x2="172" y2="120" class="greek-line" />
+  <!-- Inner line -->
+  <line x1="128" y1="60" x2="128" y2="120" class="greek-line" />
+  <path d="M 138,60 L 138,80 L 162,80 L 162,105 L 148,105 L 148,92 L 155,92" class="greek-line" />
+  <path d="M 138,120 L 138,105" class="greek-line" />
+  <path d="M 162,60 L 162,70" class="greek-line" />
+
+  <!-- ================= TOP-LEFT CORNER (0..60, 0..60) ================= -->
+  <line x1="8" y1="8" x2="60" y2="8" class="greek-line" />
+  <line x1="8" y1="8" x2="8" y2="60" class="greek-line" />
+  <line x1="52" y1="52" x2="60" y2="52" class="greek-line" />
+  <line x1="52" y1="52" x2="52" y2="60" class="greek-line" />
+  <!-- Corner square motif -->
+  <rect x="18" y="18" width="24" height="24" class="greek-line" />
+  <rect x="26" y="26" width="8" height="8" class="greek-fill" />
+
+  <!-- ================= TOP-RIGHT CORNER (120..180, 0..60) ================= -->
+  <line x1="120" y1="8" x2="172" y2="8" class="greek-line" />
+  <line x1="172" y1="8" x2="172" y2="60" class="greek-line" />
+  <line x1="120" y1="52" x2="128" y2="52" class="greek-line" />
+  <line x1="128" y1="52" x2="128" y2="60" class="greek-line" />
+  <rect x="138" y="18" width="24" height="24" class="greek-line" />
+  <rect x="146" y="26" width="8" height="8" class="greek-fill" />
+
+  <!-- ================= BOTTOM-LEFT CORNER (0..60, 120..180) ================= -->
+  <line x1="8" y1="120" x2="8" y2="172" class="greek-line" />
+  <line x1="8" y1="172" x2="60" y2="172" class="greek-line" />
+  <line x1="52" y1="120" x2="52" y2="128" class="greek-line" />
+  <line x1="52" y1="128" x2="60" y2="128" class="greek-line" />
+  <rect x="18" y="138" width="24" height="24" class="greek-line" />
+  <rect x="26" y="146" width="8" height="8" class="greek-fill" />
+
+  <!-- ================= BOTTOM-RIGHT CORNER (120..180, 120..180) ================= -->
+  <line x1="172" y1="120" x2="172" y2="172" class="greek-line" />
+  <line x1="120" y1="172" x2="172" y2="172" class="greek-line" />
+  <line x1="128" y1="120" x2="128" y2="128" class="greek-line" />
+  <line x1="120" y1="128" x2="128" y2="128" class="greek-line" />
+  <rect x="138" y="138" width="24" height="24" class="greek-line" />
+  <rect x="146" y="146" width="8" height="8" class="greek-fill" />
+
+</svg>

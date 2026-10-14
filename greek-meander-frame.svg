@@ -1,0 +1,81 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fae8a4"/>
+      <stop offset="35%" stop-color="#dfb743"/>
+      <stop offset="70%" stop-color="#b8860b"/>
+      <stop offset="100%" stop-color="#7a5500"/>
+    </linearGradient>
+    <linearGradient id="darkGold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0a1826"/>
+      <stop offset="100%" stop-color="#050e18"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="1" dy="1" stdDeviation="1" flood-color="#000" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <!-- Background ribbons for 4 borders & corners (center is transparent) -->
+  <!-- Top ribbon -->
+  <rect x="0" y="0" width="180" height="60" fill="url(#darkGold)"/>
+  <!-- Bottom ribbon -->
+  <rect x="0" y="120" width="180" height="60" fill="url(#darkGold)"/>
+  <!-- Left ribbon -->
+  <rect x="0" y="60" width="60" height="60" fill="url(#darkGold)"/>
+  <!-- Right ribbon -->
+  <rect x="120" y="60" width="60" height="60" fill="url(#darkGold)"/>
+
+  <!-- Center transparent cutout: (60,60) to (120,120) remains empty -->
+
+  <!-- OUTER & INNER RAILS -->
+  <!-- Outer top & bottom rails -->
+  <rect x="2" y="2" width="176" height="6" fill="url(#gold)"/>
+  <rect x="2" y="172" width="176" height="6" fill="url(#gold)"/>
+  <!-- Outer left & right rails -->
+  <rect x="2" y="2" width="6" height="176" fill="url(#gold)"/>
+  <rect x="172" y="2" width="6" height="176" fill="url(#gold)"/>
+
+  <!-- Inner top & bottom rails -->
+  <rect x="52" y="52" width="76" height="6" fill="url(#gold)"/>
+  <rect x="52" y="122" width="76" height="6" fill="url(#gold)"/>
+  <!-- Inner left & right rails -->
+  <rect x="52" y="52" width="6" height="76" fill="url(#gold)"/>
+  <rect x="122" y="52" width="6" height="76" fill="url(#gold)"/>
+
+  <!-- TOP-LEFT CORNER (0..60, 0..60) -->
+  <path d="M 8,8 H 52 V 22 H 22 V 40 H 40 V 32 H 30 V 30 H 46 V 46 H 16 V 16 H 52 V 8" fill="none" stroke="url(#gold)" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter"/>
+
+  <!-- TOP-RIGHT CORNER (120..180, 0..60) -->
+  <path d="M 172,8 H 128 V 22 H 158 V 40 H 140 V 32 H 150 V 30 H 134 V 46 H 164 V 16 H 128 V 8" fill="none" stroke="url(#gold)" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter"/>
+
+  <!-- BOTTOM-LEFT CORNER (0..60, 120..180) -->
+  <path d="M 8,172 H 52 V 158 H 22 V 140 H 40 V 148 H 30 V 150 H 46 V 134 H 16 V 164 H 52 V 172" fill="none" stroke="url(#gold)" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter"/>
+
+  <!-- BOTTOM-RIGHT CORNER (120..180, 120..180) -->
+  <path d="M 172,172 H 128 V 158 H 158 V 140 H 140 V 148 H 150 V 150 H 134 V 134 H 164 V 164 H 128 V 172" fill="none" stroke="url(#gold)" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter"/>
+
+  <!-- REPEATING TOP EDGE (60..120, 0..60) -->
+  <g id="top-edge">
+    <!-- Classic Greek meander segment 60px wide -->
+    <path d="M 60,16 H 104 V 44 H 76 V 28 H 92 V 36 H 84" fill="none" stroke="url(#gold)" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path d="M 104,16 H 120" fill="none" stroke="url(#gold)" stroke-width="5" stroke-linecap="square"/>
+  </g>
+
+  <!-- REPEATING BOTTOM EDGE (60..120, 120..180) -->
+  <g id="bottom-edge">
+    <path d="M 60,164 H 104 V 136 H 76 V 152 H 92 V 144 H 84" fill="none" stroke="url(#gold)" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path d="M 104,164 H 120" fill="none" stroke="url(#gold)" stroke-width="5" stroke-linecap="square"/>
+  </g>
+
+  <!-- REPEATING LEFT EDGE (0..60, 60..120) -->
+  <g id="left-edge">
+    <path d="M 16,60 V 104 H 44 V 76 H 28 V 92 H 36 V 84" fill="none" stroke="url(#gold)" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path d="M 16,104 V 120" fill="none" stroke="url(#gold)" stroke-width="5" stroke-linecap="square"/>
+  </g>
+
+  <!-- REPEATING RIGHT EDGE (120..180, 60..120) -->
+  <g id="right-edge">
+    <path d="M 164,60 V 104 H 136 V 76 H 152 V 92 H 144 V 84" fill="none" stroke="url(#gold)" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path d="M 164,104 V 120" fill="none" stroke="url(#gold)" stroke-width="5" stroke-linecap="square"/>
+  </g>
+</svg>

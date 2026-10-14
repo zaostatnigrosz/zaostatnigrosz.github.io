@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grecja Olimpijska 2026 – Święte Wybrzeże & Tron Zeusa</title>
+  <meta name="description" content="Oficjalna galeria fotograficzna z wyprawy na Riwierę Olimpijską, do świętego miasta Dion, na Olimp i do Meteorów.">
+  
+  <!-- Google Fonts: Cinzel dla antycznej dostojnej estetyki, Montserrat dla idealnej czytelności -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Cinzel+Decorative:wght@700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= GÓRNY PASEK NAWIGACJI ================= -->
+  <header class="olympian-header">
+    <div class="header-container">
+      <div class="brand-group">
+        <div class="brand-crest">
+          <span class="crest-icon">🏛️</span>
+        </div>
+        <div class="brand-titles">
+          <h1 class="site-title">Grecja Olimpijska 2026</h1>
+          <p class="site-subtitle">Grecja 2026 • Riwiera Olimpijska • Morze Egejskie & Sanktuarium Zeusa</p>
+        </div>
+      </div>
+
+      <nav class="quick-nav">
+        <a href="#weather-section" class="nav-pill"><span class="pill-icon">☀️</span> Pogoda na żywo</a>
+        <a href="#intro-section" class="nav-pill"><span class="pill-icon">📜</span> Wprowadzenie</a>
+        <a href="#counter-section" class="nav-pill"><span class="pill-icon">🏺</span> Odwiedziny bogów</a>
+        <a href="#gallery-section" class="nav-pill highlight"><span class="pill-icon">📷</span> Galeria zdjęć</a>
+      </nav>
+
+      <div class="header-controls">
+        <div class="greek-time-badge" title="Aktualny czas lokalny w Grecji">
+          <span class="clock-icon">🕒</span>
+          <span id="greek-clock">--:--:-- (czas w Grecji)</span>
+        </div>
+        <button id="theme-toggle-btn" class="ctrl-btn" title="Zmień motyw ramki (Złoty Meander / Klasyczna kamienna ramka a-ramkaa3)">
+          <span class="btn-icon">🎨</span>
+          <span class="btn-text">Styl Ramki</span>
+        </button>
+      </div>
+    </div>
+    <div class="meander-ribbon-divider"></div>
+  </header>
+
+  <!-- ================= GŁÓWNY KONTENER STRONY ================= -->
+  <main class="page-container">
+
+    <!-- ================= POGODA NA ŻYWO (OPEN-METEO ONLINE) ================= -->
+    <section id="weather-section" class="content-section weather-card-section">
+      <div class="section-badge">
+        <span class="pulse-dot"></span>
+        <span>WARUNKI ATMOSFERYCZNE NA ŻYWO • RIWIERA OLIMPIJSKA & ZATOKA TERMAJSKA</span>
+      </div>
+
+      <div class="weather-grid">
+        <!-- Temperatura powietrza -->
+        <div class="weather-box" id="box-air-temp">
+          <div class="box-icon-wrap">
+            <span class="weather-symbol">🌡️</span>
+          </div>
+          <div class="box-content">
+            <div class="box-label">Temperatura powietrza</div>
+            <div class="box-value" id="val-air-temp">--°C</div>
+            <div class="box-sub" id="sub-air-feels">Odczuwalna: --°C</div>
+          </div>
+        </div>
+
+        <!-- Temperatura wody morskiej -->
+        <div class="weather-box" id="box-sea-temp">
+          <div class="box-icon-wrap">
+            <span class="weather-symbol">🌊</span>
+          </div>
+          <div class="box-content">
+            <div class="box-label">Temperatura wody w morzu</div>
+            <div class="box-value sea-color" id="val-sea-temp">--°C</div>
+            <div class="box-sub" id="sub-sea-desc">Morze Egejskie • Ciepła woda</div>
+          </div>
+        </div>
+
+        <!-- Wiatr -->
+        <div class="weather-box" id="box-wind">
+          <div class="box-icon-wrap">
+            <span class="weather-symbol">💨</span>
+          </div>
+          <div class="box-content">
+            <div class="box-label">Wiatr na wybrzeżu</div>
+            <div class="box-value" id="val-wind">-- km/h</div>
+            <div class="box-sub" id="sub-wind-dir">Kierunek: -- • Łagodna bryza</div>
+          </div>
+        </div>
+
+        <!-- Zachmurzenie -->
+        <div class="weather-box" id="box-clouds">
+          <div class="box-icon-wrap">
+            <span class="weather-symbol" id="symbol-clouds">⛅</span>
+          </div>
+          <div class="box-content">
+            <div class="box-label">Zachmurzenie i niebo</div>
+            <div class="box-value" id="val-clouds">--%</div>
+            <div class="box-sub" id="sub-cloud-desc">Pobieranie aktualnych danych satelitarnych...</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="weather-footer">
+        <span class="weather-location-pin">📍 Stacja pomiarowa: Paralia / Katerini (40.27° N, 22.51° E) • Automatyczne odświeżanie</span>
+        <button id="refresh-weather-btn" class="refresh-btn" title="Odśwież dane pogodowe teraz">
+          <span class="refresh-icon">🔄</span> Odśwież dane
+        </button>
+      </div>
+    </section>
+
+    <!-- ================= WPROWADZENIE DO EKSPOZYCJI ================= -->
+    <section id="intro-section" class="content-section intro-hero-section">
+      <div class="hero-frame-card">
+        <div class="hero-ornament top-ornament">⚡ 🏛️ ⚡</div>
+        <h2 class="hero-title">Święte Wybrzeże Morza Egejskiego & Sanktuarium Zeusa</h2>
+        <div class="hero-gold-line"></div>
+        <p class="hero-description">
+          Witaj na oficjalnej ekspozycji fotograficznej z wyprawy pod mityczny tron Zeusa oraz do świętego miasta Dion. Przeglądaj kadry plaży olimpijskiej, fal Morza Egejskiego oraz starożytnych świątyń, mozaik, monastyrów w eleganckiej panoramie widokowej.
+        </p>
+        <div class="hero-badges">
+          <span class="h-badge">🌊 Riwiera Olimpijska</span>
+          <span class="h-badge">🏛️ Miasto Zeusa Dion</span>
+          <span class="h-badge">⚡ Wąwóz Enipeas & Tron Zeusa</span>
+          <span class="h-badge">⛰️ Wiszące Monastyry Meteory</span>
+          <span class="h-badge">📸 472 Fotografie</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LICZNIK ODWIEDZIN STRONY: "ODWIEDZINY BOGÓW" ================= -->
+    <section id="counter-section" class="content-section counter-section">
+      <div class="section-header-centered">
+        <div class="greek-glyph">🏺</div>
+        <h2 class="section-title">Odwiedziny bogów</h2>
+        <p class="section-subtitle">
+          Aktywny rejestr odwiedzin i hołdów składanych pod mitycznym tronem Zeusa na Olimpie.
+          Tłem dla każdej cyfry licznika są zabytkowe greckie wazy ceramiczne, podpisane zgodnie z ich kształtem.
+        </p>
+      </div>
+
+      <!-- Podesty z 5 wazami dla 5 cyfr licznika -->
+      <div class="vases-stage-container">
+        <div class="vases-row" id="gods-vases-row">
+
+          <!-- Cyfra 1: Amfora (a1.png) -->
+          <div class="vase-pedestal-card" data-vase="1">
+            <div class="pedestal-top"></div>
+            <div class="vase-visual-wrapper">
+              <img src="a1.png" alt="Waza Amfora" class="vase-img vase-1">
+              <div class="digit-medallion">
+                <span class="digit-char" id="digit-1">0</span>
+              </div>
+            </div>
+            <div class="pedestal-base">
+              <div class="vase-order">Dziesiątki tysięcy · 10 000</div>
+              <h3 class="vase-name">Amfora</h3>
+              <div class="vase-greek-name">Kształt: Amfora (z dwoma uchwytami)</div>
+              <p class="vase-desc">Dwuuche naczynie na oliwę olimpijską i attyckie wino.</p>
+            </div>
+          </div>
+
+          <!-- Cyfra 2: Lutrofora (a2.png) -->
+          <div class="vase-pedestal-card" data-vase="2">
+            <div class="pedestal-top"></div>
+            <div class="vase-visual-wrapper">
+              <img src="a2.png" alt="Waza Lutrofora" class="vase-img vase-2">
+              <div class="digit-medallion">
+                <span class="digit-char" id="digit-2">0</span>
+              </div>
+            </div>
+            <div class="pedestal-base">
+              <div class="vase-order">Tysiące · 1 000</div>
+              <h3 class="vase-name">Lutrofora</h3>
+              <div class="vase-greek-name">Kształt: Lutrofora (smukła waza obrzędowa)</div>
+              <p class="vase-desc">Smukłe naczynie obrzędowe do rytualnych obmyć świętą wodą.</p>
+            </div>
+          </div>
+
+          <!-- Cyfra 3: Ojnochoe (a3.png) -->
+          <div class="vase-pedestal-card" data-vase="3">
+            <div class="pedestal-top"></div>
+            <div class="vase-visual-wrapper">
+              <img src="a3.png" alt="Waza Ojnochoe" class="vase-img vase-3">
+              <div class="digit-medallion">
+                <span class="digit-char" id="digit-3">0</span>
+              </div>
+            </div>
+            <div class="pedestal-base">
+              <div class="vase-order">Setki · 100</div>
+              <h3 class="vase-name">Ojnochoe</h3>
+              <div class="vase-greek-name">Kształt: Ojnochoe (dzban z trójdzielnym wylewem)</div>
+              <p class="vase-desc">Elegancki dzban z trójdzielnym wylewem do nalewania nektaru.</p>
+            </div>
+          </div>
+
+          <!-- Cyfra 4: Pelike (a4.png) -->
+          <div class="vase-pedestal-card" data-vase="4">
+            <div class="pedestal-top"></div>
+            <div class="vase-visual-wrapper">
+              <img src="a4.png" alt="Waza Pelike" class="vase-img vase-4">
+              <div class="digit-medallion">
+                <span class="digit-char" id="digit-4">0</span>
+              </div>
+            </div>
+            <div class="pedestal-base">
+              <div class="vase-order">Dziesiątki · 10</div>
+              <h3 class="vase-name">Pelike</h3>
+              <div class="vase-greek-name">Kształt: Pelike (pękata waza panatenajska)</div>
+              <p class="vase-desc">Pękata amfora o stabilnej podstawie używana na uroczystych ucztach.</p>
+            </div>
+          </div>
+
+          <!-- Cyfra 5: Krater (a5.png) -->
+          <div class="vase-pedestal-card" data-vase="5">
+            <div class="pedestal-top"></div>
+            <div class="vase-visual-wrapper">
+              <img src="a5.png" alt="Waza Krater" class="vase-img vase-5">
+              <div class="digit-medallion">
+                <span class="digit-char" id="digit-5">0</span>
+              </div>
+            </div>
+            <div class="pedestal-base">
+              <div class="vase-order">Jedności · 1</div>
+              <h3 class="vase-name">Krater</h3>
+              <div class="vase-greek-name">Kształt: Krater (naczynie biesiadne)</div>
+              <p class="vase-desc">Monumentalne naczynie sympozjonów do mieszania wina z wodą.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Przycisk złożenia daru (+1 odwiedziny) -->
+        <div class="counter-actions">
+          <button id="sacrifice-btn" class="olympian-btn primary-gold">
+            <span class="btn-sparkle">⚡</span>
+            <span>Złóż dar Zeusowi na ołtarzu (+1 odwiedziny)</span>
+            <span class="btn-sparkle">⚡</span>
+          </button>
+          <div class="counter-hint" id="counter-hint-text">
+            Twój hołd został przyjęty przez bóstwa Olimpu. Licznik zapisuje każdą wizytę w pamięci trwałej przeglądarki.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GŁÓWNA GALERIA FOTOGRAFICZNA ================= -->
+    <section id="gallery-section" class="content-section gallery-main-section">
+      <div class="section-header-centered">
+        <div class="greek-glyph">📷</div>
+        <h2 class="section-title">Ekspozycja Fotograficzna</h2>
+        <p class="section-subtitle">
+          Wszystkie 472 kadry otoczone antyczną ramką meandrową dopasowaną do proporcji ujęcia.
+          Używaj klawiszy <strong>←</strong> / <strong>→</strong> lub przycisków <strong>Α</strong> / <strong>Ω</strong> do nawigacji między zdjęciami.
+        </p>
+      </div>
+
+      <!-- Pasek narzędzi galerii: kategorie, wyszukiwanie, pokaz slajdów -->
+      <div class="gallery-toolbar">
+        <div class="filter-tabs" id="filter-tabs-container">
+          <button class="filter-tab active" data-category="all">Wszystkie zdjęcia (472)</button>
+          <button class="filter-tab" data-category="dion">🏛️ Dion – Sanktuarium Zeusa (116)</button>
+          <button class="filter-tab" data-category="olympus">⚡ Masyw Olimpu & Enipeas (79)</button>
+          <button class="filter-tab" data-category="meteora">⛰️ Monastyry w Meteorach (131)</button>
+          <button class="filter-tab" data-category="riviera">🌊 Riwiera Olimpijska & Morze (146)</button>
+        </div>
+
+        <div class="gallery-utility-controls">
+          <!-- Skok do numeru kadru -->
+          <div class="jump-control">
+            <label for="jump-input">Skok do zdjęcia:</label>
+            <input type="number" id="jump-input" min="1" max="472" value="1" placeholder="Nr zdjęcia">
+            <button id="jump-btn" class="util-btn">Przejdź</button>
+          </div>
+
+          <!-- Pokaz slajdów -->
+          <button id="slideshow-btn" class="util-btn" title="Automatyczny pokaz slajdów">
+            <span id="slideshow-icon">▶️</span> <span id="slideshow-text">Pokaz slajdów</span>
+          </button>
+
+          <!-- Pełny ekran -->
+          <button id="fullscreen-btn" class="util-btn" title="Pełny ekran (Klawisz F)">
+            <span>⛶</span> Pełny ekran
+          </button>
+        </div>
+      </div>
+
+      <!-- Scena z ramką i przyciskami Alfa / Omega -->
+      <div class="stage-viewport-container">
+        
+        <!-- Lewy przycisk nawigacji: Grecka wielka litera Alfa (Α) -->
+        <button id="btn-prev-alpha" class="greek-nav-button left-alpha" aria-label="Poprzednie zdjęcie" title="Poprzednie zdjęcie (Klawisz A / Lewa strzałka)">
+          <div class="nav-btn-inner">
+            <span class="greek-letter">Α</span>
+          </div>
+        </button>
+
+        <!-- Kadr ze zdjęciem w dopasowanej ramce meandrowej -->
+        <div class="photo-viewport-card" id="photo-viewport">
+          <div class="meander-frame-wrap" id="main-frame-element">
+            <div class="photo-inner-container">
+              <img id="active-gallery-image" src="" alt="Fotografia z Grecji Olimpijskiej" class="gallery-img">
+              <div id="photo-loading-spinner" class="photo-spinner">
+                <div class="spin-ring"></div>
+                <span>Ładowanie fotografii...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prawy przycisk nawigacji: Grecka wielka litera Omega (Ω) -->
+        <button id="btn-next-omega" class="greek-nav-button right-omega" aria-label="Następne zdjęcie" title="Następne zdjęcie (Klawisz Ω / O / Prawa strzałka)">
+          <div class="nav-btn-inner">
+            <span class="greek-letter">Ω</span>
+          </div>
+        </button>
+
+      </div>
+
+      <!-- Karta informacyjna pod zdjęciem i przycisk Google Maps -->
+      <div class="photo-info-card" id="photo-info-card">
+        <div class="photo-info-header">
+          <div class="photo-title-group">
+            <div class="photo-index-pill" id="photo-index-display">Zdjęcie 1 z 472</div>
+            <h3 class="photo-main-title" id="photo-title-text">Powitanie z Riwierą Olimpijską</h3>
+          </div>
+          
+          <div class="photo-tags">
+            <span class="info-badge" id="photo-date-badge">📅 26 września 2026, 19:10</span>
+            <span class="info-badge cat-badge" id="photo-category-badge">🏛️ Kategoria</span>
+            <span class="info-badge loc-badge" id="photo-location-badge">📍 Lokalizacja</span>
+          </div>
+        </div>
+
+        <div class="photo-description-block">
+          <textarea id="photo-desc-text" class="photo-desc-content photo-desc-editable" 
+            placeholder="Wpisz opis zdjęcia..." 
+            title="Kliknij aby edytować opis tego zdjęcia. Opis zostanie zapisany automatycznie."
+            rows="3"></textarea>
+          <div class="desc-hint">✏️ Kliknij aby edytować opis – zapisywany automatycznie per zdjęcie</div>
+        </div>
+
+        <!-- Przycisk otwierający dokładną lokalizację w Google Maps -->
+        <div class="photo-maps-action-bar">
+          <a id="google-maps-btn" href="#" target="_blank" rel="noopener noreferrer" class="maps-action-button" title="Otwórz dokładną lokalizację w Google Maps">
+            <span class="maps-icon">📍</span>
+            <span class="maps-text-primary">Otwórz w Google Maps</span>
+            <span class="maps-coord" id="photo-coords-display">(40.2671° N, 22.5975° E)</span>
+            <span class="maps-arrow">↗</span>
+          </a>
+
+          <div class="keyboard-guide">
+            <span>Sterowanie:</span>
+            <kbd>Α</kbd> lub <kbd>←</kbd> Poprzednie &bull;
+            <kbd>Ω</kbd> / <kbd>O</kbd> lub <kbd>→</kbd> Następne &bull;
+            <kbd>Spacja</kbd> Pokaz &bull;
+            <kbd>F</kbd> Pełny ekran
+          </div>
+        </div>
+      </div>
+
+      <!-- Przewijany pasek miniatur (Filmstrip) -->
+      <div class="filmstrip-section">
+        <div class="filmstrip-controls">
+          <button id="filmstrip-scroll-left" class="film-scroll-btn" title="Przewiń miniatury w lewo">‹</button>
+          <div class="filmstrip-track-container" id="filmstrip-container">
+            <div class="filmstrip-track" id="filmstrip-track">
+              <!-- Miniatury generowane dynamicznie -->
+            </div>
+          </div>
+          <button id="filmstrip-scroll-right" class="film-scroll-btn" title="Przewiń miniatury w prawo">›</button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ================= PRZEGLĄD SZLAKU WYPRAWY ================= -->
+    <section id="route-section" class="content-section route-summary-section">
+      <div class="section-header-centered">
+        <div class="greek-glyph">🗺️</div>
+        <h2 class="section-title">Szlak Wyprawy Olimpijskiej</h2>
+        <p class="section-subtitle">Główne etapy ekspedycji przez macedońską i tesalską Grecję</p>
+      </div>
+
+      <div class="route-cards-grid">
+        <div class="route-card" onclick="filterAndJump('riviera')">
+          <div class="route-card-img-placeholder riviera-bg"></div>
+          <div class="route-card-body">
+            <div class="route-step">ETAP I & IV</div>
+            <h3 class="route-title">Riwiera Olimpijska & Morze Egejskie</h3>
+            <p class="route-text">Plaża w Paralii, Zatoka Termajska, wschody słońca i morska bryza u stóp Olimpu.</p>
+            <div class="route-meta">146 kadrów • 40.2671° N, 22.5975° E</div>
+          </div>
+        </div>
+
+        <div class="route-card" onclick="filterAndJump('dion')">
+          <div class="route-card-img-placeholder dion-bg"></div>
+          <div class="route-card-body">
+            <div class="route-step">ETAP II</div>
+            <h3 class="route-title">Święte Miasto Dion</h3>
+            <p class="route-text">Sanktuarium Zeusa Najwyższego, starożytne mozaiki willi Dionizosa i rzymskie łaźnie.</p>
+            <div class="route-meta">116 kadrów • 40.1755° N, 22.4878° E</div>
+          </div>
+        </div>
+
+        <div class="route-card" onclick="filterAndJump('olympus')">
+          <div class="route-card-img-placeholder olympus-bg"></div>
+          <div class="route-card-body">
+            <div class="route-step">ETAP III</div>
+            <h3 class="route-title">Masyw Olimpu & Wąwóz Enipeas</h3>
+            <p class="route-text">Litochoro, mityczne wanny Afrodyty i Zeusa, stary monastyr św. Dionizego i szczyt Mitikas.</p>
+            <div class="route-meta">79 kadrów • 40.1783° N, 22.4831° E</div>
+          </div>
+        </div>
+
+        <div class="route-card" onclick="filterAndJump('meteora')">
+          <div class="route-card-img-placeholder meteora-bg"></div>
+          <div class="route-card-body">
+            <div class="route-step">ETAP V</div>
+            <h3 class="route-title">Wiszące Monastyry w Meteorach</h3>
+            <p class="route-text">Kalambaka, potężne iglice z piaskowca, klasztory Varlaam i Wielki Meteoron zawieszone w chmurach.</p>
+            <div class="route-meta">131 kadrów • 39.7217° N, 21.6306° E</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= STOPKA ================= -->
+  <footer class="olympian-footer">
+    <div class="meander-ribbon-divider"></div>
+    <div class="footer-container">
+      <div class="footer-quote">
+        <p class="quote-gr">„Poznaj samego siebie • Nic ponad miarę”</p>
+        <p class="quote-pl">Mądrość starożytnej Grecji wyryta w sanktuarium Apollina w Delfach</p>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Grecja Olimpijska – Kronika Fotograficzna Wyprawy. Wszelkie prawa zastrzeżone.</p>
+        <p class="footer-credits">Wykonano z czcią dla Zeusa Olimpijskiego i piękna Hellady.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Skrypty -->
+  <script src="gallery-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
